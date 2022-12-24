@@ -6,7 +6,7 @@
 const { Pool } = require('pg');
 
 //
-// the data mus be stored in the redis store in the below fashion(key: value)
+// the data must be stored in the redis store in the below fashion(key: value)
 // key = (query + parameterArray) as stringified
 // value = data as object containing(rowCount and rows array)
 //
