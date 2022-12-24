@@ -99,3 +99,15 @@ doHash();
 doHash();
 doHash();
 doHash();
+
+
+/////////////////////////////
+//    cpu logical cores    //
+/////////////////////////////
+
+
+const os = require('os');
+
+const systemCpuCores = os.cpus();
+
+console.log(systemCpuCores);
