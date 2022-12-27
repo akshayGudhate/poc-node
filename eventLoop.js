@@ -40,3 +40,29 @@ while (isNextTick()) {
 //
 // extit back to terminal --> exit the node process
 //
+//////////////////////
+//    event loop    //
+//////////////////////
+
+const promiseFunction = () => {
+    return new Promise((resolve, reject) => {
+        resolve("Promise 1");
+    });
+};
+
+console.log("Hey there1!");
+setTimeout(() => console.log("Hey there2!"), 0);
+const results = promiseFunction();
+results.then(value => console.log("Hey there3!", value));
+setTimeout(() => console.log("Hey there4!"), 10);
+console.log("Hey there5!");
+
+//
+// answers order
+//
+
+// 1. Hey there1!
+// 2. Hey there5!
+// 3. Hey there3! Promise 1
+// 4. Hey there2!
+// 5. Hey there4!
