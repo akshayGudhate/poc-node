@@ -21,7 +21,7 @@ const middleware2 = async (req, res, next) => {
 
 
 // controller
-r.get('/am', middleware1, middleware2, (req, res) => {
+router.get('/am', middleware1, middleware2, (req, res) => {
     console.log("hey there...");
     return res.send("Akshay Gudhate");
 });
