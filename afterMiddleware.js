@@ -10,12 +10,15 @@ const router = express.Router();
 // middlewares
 //
 const middleware1 = (req, res, next) => {
+    req.time = new Date();
     console.log("*********************************");
     next();
 };
 
 const middleware2 = async (req, res, next) => {
     await next();
+    const requestExecutionTime = (new Date() - req.time);
+    console.log({ requestExecutionTime });
     console.log("----------------------------------");
 };
 
